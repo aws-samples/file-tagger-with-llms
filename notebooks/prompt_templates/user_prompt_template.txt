@@ -1,0 +1,5 @@
+What type of document is this?  Does it contain any PII data?  Output the results in the following JSON format.  Do not include preamble or postamble.
+{
+	"document_type": "Type of document in 5 words or less - string data type",
+	"pii_indicator": "Does this document contain PII information or not? - boolean data type"
+}
