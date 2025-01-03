@@ -1,5 +1,5 @@
 """
-Copyright 2024 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
+Copyright 2025 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
 SPDX-License-Identifier: MIT-0
 """
 import boto3
@@ -420,5 +420,10 @@ def process_prompt(model_or_inference_profile_id, bedrock_rt_client, prompt_temp
         }
     ]
     # Invoke the LLM and return the response
-    return invoke_llm(model_or_inference_profile_id, bedrock_rt_client, system_prompts, messages, True)
+    llm_response = invoke_llm(model_or_inference_profile_id, bedrock_rt_client, system_prompts, messages, True)
+    llm_response = llm_response.lstrip("```json")
+    llm_response = llm_response.rstrip("```")
+    llm_response = llm_response.lstrip("<output_format>")
+    llm_response = llm_response.rstrip("</output_format>")
+    return llm_response
 
