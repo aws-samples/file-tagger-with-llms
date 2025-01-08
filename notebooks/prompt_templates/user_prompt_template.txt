@@ -1,0 +1,9 @@
+Determine the description and summary of the document along with the presence of PII data in it. Output the result only in the valid JSON format specified in the <output_format> tag.  Do not include preamble or postamble.
+<output_format>
+{
+	"description": "Description of the document in 5 words or less - string data type",
+	"summary": Summary of the content of the document in 200 words or less - string data type",
+	"pii_indicator": "Does this document contain PII information or not? If it contains PII, then set this to true. If it does not contain PII, then set this to false. If you cannot determine it to be either true or false, then, set this value to None - boolean data type",
+	"pii_explanation": "Explain in 100 words or less how you determined the pii_indicator value - string data type"
+}
+</output_format>
